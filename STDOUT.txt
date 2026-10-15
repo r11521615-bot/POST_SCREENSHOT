@@ -1,0 +1,663 @@
+Debug Profile Service Server
+ 
+* key server versions
+  ----               -------
+  Name               Version
+  ----               -------
+  Web API            Debug Profile Service build 17.0.3.1-20251121-1621
+  Web UI             Debugger Profile Management UI build 1.1.11-SNAPSHOT-Oct 24 16:21
+  Data Collector API Data Collector Service build 1.0.2-SNAPSHOT-Oct 14 13:20
+  Server runtime     WebSphere Application Server Version 22.0.0.9 Liberty - (22.0.0.9-cl220920220815-1900)
+  Java               21.0.10
+ 
+* key server root paths
+  ----               ----                                                         -----------     -----      -----
+  Name               Path                                                         Permissions     Owner      Group
+  ----               ----                                                         -----------     -----      -----
+  Java root          /B/usr/lpp/java/J21.0_64                                     drwxr-xr-x      BPXROOT    OMVSGRP4
+  Server root        /X/usr/lpp/liberty_zos/current -> ./22.0.0.9                 lrwxrwxrwx      BPXROOT    OMVSGRP4
+  Web service root   /X/usr/lpp/IBM/debug                                         drwxrwxrwx      SHUYY      OCSP
+  Config root        /etc/debug                                                   drwxr-xr-x      SHUYY      OMVSGRP4
+  Output root        /var/debug                                                   drwxrwxrwt      SHUYY      OMVSGRP4
+ 
+* key zFS file systems
+  ----               ----------
+  Name               Filesystem
+  ----               ----------
+  Java root          OMVS.V32.APST.JAVAV21
+  Server root        OMVS.V25.APST.SBBLZFS.X
+  Web service root   IDZEE.DEBUG.ZFS
+  Config root        OMVS.APST.ETC
+  Output root        OMVS.APST.VAR
+ 
+* key configuration file
+  Debug Profile configuration file: /etc/debug/eqaprof.env
+  Data Collector API configuration file: /etc/debug/eqadrest.env
+ 
+* liberty.ifaprd.rex (Aug21,2023)
+  startup arguments:
+  executed by STCBUG on APST at 15 Oct 2026 11:23:28
+ 
+* key Liberty environment variables
+  WLP_USER_DIR="/X/usr/lpp/IBM/debug"
+  WLP_PRODUCT_EXT_DIR="/var/debug/eqaProfile/product.ext"
+ 
+* supported products
+  5900-BBG Test Accel for z
+  5755-AB1 IBM APP DLIV FND
+  5755-AB5 IBM IDz EE
+  5755-AB6 IBM Debug for z
+  5900-BVB IBM IDz Select
+  5724-T07 IBM IDz
+ 
+* server will register as PID 5755-AB5, EQAPROF
+  matching PARMLIB(IFAPRDxx) definition:
+S OWNER            NAME             FEATURE          VERSION  ID
+E IBM CORP         IBM IDz EE       *                * .* .*  5755-AB5
+ 
+* liberty.ifaprd.rex ended with return code 0 at 15 Oct 2026 11:23:28
+ 
+* JVM options:
+  -DkeystoreType=PKCS12
+  -DkeystoreFile=/etc/debug/keystore.p12
+  -DkeystorePass=liberty
+  -Dfile.encoding=UTF-8
+  -Dstdout.encoding=IBM1047
+  -Dstderr.encoding=IBM1047
+  -Dcom.ibm.tools.attach.enable=no
+  -DsecureFlag=Y
+  -Dport=8143
+  -Dcontext.path=/api/v1
+  -DhttpProtocolVersion=http/1.1
+  -DallowProtocolVersionFallback=true
+  -DcorAllowedOrigins=*
+  -DtrustedHostnames=*
+  -DenableKeepAlive=true
+  -DdenyIPAddress=false
+  -Ddefault.dsname=\&USERID.DLAYDBG.EQAUOPTS
+  -Ddtcn.ports=/etc/debug/dtcn.ports
+  -Djava.library.path=/X/usr/lpp/IBM/debug/servers/eqaProfile/lib/s390x
+  -DrequestsPerSec=1000.0
+  -DenableRateLimit=true
+  -DenableTraceLog=true
+  -DtraceLogMaxFiles=2
+  -DserverLoggerLevel=DEBUG
+  -DdpsApiLoggerLevel=DEBUG
+  -DimsIsoApiLoggerLevel=INFO
+  -DauthApiLoggerLevel=DEBUG
+  -DsafJwtIsEnabled=true
+  -DsafJwtApplId=EQAAPPL
+  -DsafBasicIsEnabled=true
+  -Dcom.ibm.debug.imsiso.dd.eqatipsb=EQAW.SEQAMOD,IMS.SDFSRESL,CEE.SCEERUN
+  -Dcom.ibm.debug.imsiso.dd.syslib=SYS1.MACLIB
+  -Dcom.ibm.debug.imsiso.dd.sysproc=EQAW.SEQAEXEC
+  -Dcom.ibm.debug.imsiso.dd.jcllib=EQAW.SEQATLIB
+  -DtraceModelLoggerLevel=OFF
+  -DdataCollectorServiceLoggerLevel=OFF
+  -Ddata_collector_read=*
+  -Ddata_collector_output=/var/debug/data_collector_output
+ 
+Launching eqaProfile (IBM IDz EE 17.0/wlp-1.0.68.cl220920220815-1900) on IBM J9 VM, version 21.0.10+7 (en)
+[AUDIT   ] CWWKE0001I: The server eqaProfile has been launched.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): https://172.30.34.1:8143/openapi/ui/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): https://172.30.34.1:8143/profile-management/
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Exception ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] [ TargetsTableImpl@d451e027 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Object ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Enum ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.nio.file.SimpleFileVisitor ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Closeable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Object ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.annotation.Annotation ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@90411560 ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Serializable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[AUDIT   ] CWWKZ0001I: Application profile-management started in 1.144 seconds.
+[WARNING ] ANNO_CLASSINFO_SCAN_EXCEPTION
+                                                                                                               ClassInfoCacheImpl@16f94935
+                                                                                                               java.lang.Object
+                                                                                                               Class [ java.lang.Object ] from resource [ java/lang/Object.class ] Exception creating reader
+                                                                                                               java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ 
+[WARNING ] Scan failure
+Class [ java.lang.Object ] from resource [ java/lang/Object.class ] Exception creating reader
+[AUDIT   ] CWWKT0016I: Web application available (default_host): https://172.30.34.1:8143/openapi/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): https://172.30.34.1:8143/api/v1/
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.Callable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Enum ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Exception ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.security.PrivilegedAction ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Object ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.Comparator ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@de5118aa ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.annotation.Annotation ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[AUDIT   ] CWWKZ0001I: Application ProfileService started in 1.624 seconds.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): https://172.30.34.1:8143/api/v1/recording/
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.InheritableThreadLocal ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Number ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.text.DateFormat ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.time.temporal.TemporalAccessor ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.annotation.Annotation ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Enum ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.Delayed ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.annotation.Documented ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.zip.GZIPOutputStream ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Cloneable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.AutoCloseable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.ThreadLocal ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.ScheduledFuture ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Serializable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.CharSequence ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.security.PrivilegedAction ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.RandomAccess ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Closeable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ javax.lang.model.util.SimpleElementVisitor7 ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.Iterator ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Reader ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.BlockingQueue ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Comparable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.AbstractCollection ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ javax.annotation.processing.SupportedAnnotationTypes ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.SafeVarargs ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.AbstractSet ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.reflect.GenericArrayType ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.AbstractList ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.ConcurrentLinkedQueue ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.ObjectInputStream ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Iterable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ javax.annotation.processing.AbstractProcessor ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Writer ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ javax.management.NotificationBroadcasterSupport ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.ObjectOutputStream ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.nio.file.SimpleFileVisitor ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.annotation.Retention ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.ThreadFactory ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Thread ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.reflect.WildcardType ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.SecurityManager ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.reflect.ParameterizedType ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.concurrent.ArrayBlockingQueue ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.beans.PropertyChangeListener ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Deprecated ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.Collection ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.EventListener ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.AbstractMap ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ javax.net.ssl.HostnameVerifier ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Runnable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.Comparator ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Exception ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.Flushable ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.RuntimeException ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.OutputStream ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.io.IOException ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.annotation.Target ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.lang.Object ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ javax.sql.DataSource ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+[WARNING ] [ TargetsTableImpl@baf7c31c ] ANNO_TARGETS_SCAN_EXCEPTION [ java.util.Map$Entry ] (java.lang.IllegalArgumentException: Unsupported class file major version 65
+	at org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at [internal classes]
+ : Unsupported class file major version 65)
+[WARNING ] Scan exception
+Unsupported class file major version 65
+2026-10-15 07:23:34.935 INFO  Server - Server running with jobname EQAPROF1 has started, and is listening on HTTPS (SSL) port=8143
+2026-10-15 07:23:34.950 INFO  Server - Debug Profile Service API v2.2 started with context path  [/api/v1/profile]
+2026-10-15 07:23:34.950 INFO  Server - Debug Profile Service API initialized:
+2026-10-15 07:23:34.951 INFO  Server -               local host = [APSTVIPA.POST.GOV.TW]
+2026-10-15 07:23:34.951 INFO  Server -               context path = [/api/v1]
+2026-10-15 07:23:34.952 INFO  Server -               default dsname = [&USERID.DLAYDBG.EQAUOPTS]
+2026-10-15 07:23:34.952 INFO  Server -               dtcn.ports total cics regions = [0]
+2026-10-15 07:23:35.199 INFO  Server - IMS Transaction Isolation Service API v1.3 started with context path  [/api/v1/imsiso]
+2026-10-15 07:23:35.288 INFO  Server - Authentication Service API v1.0 started with context path  [/api/v1/auth]
+2026-10-15 07:23:35.289 INFO  Server - Authentication Service API initialized:
+2026-10-15 07:23:35.289 INFO  Server -               auth mode = [ALL]
+2026-10-15 07:23:35.307 INFO  Server - Info Service API v1.1 started with context path  [/api/v1/info]
+2026-10-15 07:23:35.307 INFO  Server - Info Service API initialized:
+2026-10-15 07:23:35.308 INFO  Server -               Name = [EQAPROF1]
+2026-10-15 07:23:35.308 INFO  Server -               Owner = [STCBUG]
+2026-10-15 07:23:35.309 INFO  Server -               z/OS Version = [4.2.0 2025-09-09]
+2026-10-15 07:23:35.309 INFO  Server -               PID/Parent PID = [16843192/50397482]
+[AUDIT   ] CWWKZ0001I: Application recordingservice started in 1.562 seconds.
+[AUDIT   ] CWWKF0015I: The server has the following interim fixes active in the runtime: PH50863,PH46816,PH52095,OLGH23827. For a full listing of installed fixes run: productInfo version --ifixes
+[AUDIT   ] CWWKF0012I: The server installed the following features: [concurrent-1.0, jaxrs-2.1, jaxrsClient-2.1, jsonb-1.0, jsonp-1.1, mpConfig-2.0, mpOpenAPI-2.0, servlet-4.0, ssl-1.0, transportSecurity-1.0].
+[AUDIT   ] CWWKF0011I: The eqaProfile server is ready to run a smarter planet. The eqaProfile server started in 6.036 seconds.
+2026-10-15 07:32:57.898 DEBUG Authentication Service - Authentication Module Started: SAF JWT
+2026-10-15 07:32:57.910 DEBUG Authentication Service - Calling SAF JWT service using applId: EQAAPPL
+2026-10-15 07:32:57.930 ERROR Authentication Service - [SafServiceUnavailable] No token generated.
+2026-10-15 07:32:57.941 ERROR Authentication Service - [AuthServiceUnavailable] The authentication service could not complete the request because the authentication provider is not available.
+2026-10-15 07:34:29.771 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 07:34:29.773 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 07:34:29.782 DEBUG Authentication Service - Successfully created user context switch. Server user ID: 'STCBUG' -> Current user ID: 'HAOKOH'
+2026-10-15 07:34:29.794 DEBUG Authentication Service - Successfully deleted user context switch. Current user ID: 'HAOKOH' -> Server user ID: 'STCBUG'
+2026-10-15 07:35:20.311 DEBUG Authentication Service - Authentication Module Started: SAF JWT
+2026-10-15 07:35:20.312 DEBUG Authentication Service - Calling SAF JWT service using applId: EQAAPPL
+2026-10-15 07:35:20.312 ERROR Authentication Service - [SafTokenNotProvided] No token provided. The token in the authorization header is missing or the cookie name that contained the token under test did not match the expected name of safAuthToken
+2026-10-15 07:35:20.316 ERROR Authentication Service - [AuthTokenNotProvided] A token is required.
+2026-10-15 07:42:12.038 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 07:42:12.039 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 07:42:12.042 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 07:45:12.121 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 07:45:12.122 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 07:45:12.124 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 07:46:26.871 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 07:46:26.872 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 07:46:26.876 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 07:47:52.289 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 07:47:52.290 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 07:47:52.292 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 07:53:59.680 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 07:53:59.680 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 07:53:59.683 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 09:32:08.198 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 09:32:08.198 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 09:32:08.201 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 09:32:53.617 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 09:32:53.618 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 09:32:53.620 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
+2026-10-15 09:34:31.333 DEBUG Authentication Service - Authentication Module Started: SAF Basic Token
+2026-10-15 09:34:31.334 DEBUG Authentication Service - Calling SAF BASIC service using function provided by: OE Service __passwd()
+2026-10-15 09:34:31.339 ERROR Authentication Service - [UnauthorizedAccess] Basic Authentication failure for user HAOKOH. PlatformReturned object:
+     [errno]     : 163
+     [errno2]    : 151783456
+     [errnoMsg]  : EDC5163I SAF/RACF extract error.
+ 
