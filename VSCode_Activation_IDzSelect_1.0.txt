@@ -1,0 +1,23 @@
+Licensed memo to users – IBM Developer for z/OS Select 1.0
+
+
+5900-BVB IBM Developer for z/OS Select entitles you to download and use IBM Developer for z/OS on VS Code from the IBM Mainframe DEV web site. The IBM Developer for z/OS on VS Code software package includes the IBM Z Open Editor. IBM Z Open Editor is an extension of Microsoft Visual Studio Code (VS Code). Some advanced features of the editor require an activation key to continue use after the trial period ends, which is provided in this memo.
+
+Activation of the licensed features requires the following:
+
+1. Save the following activation key as the only content in a text file and provide it to the IBM Developer for z/OS Select entitled users:
+
+E4+g47t13MLfhW0T1yyJeLsUKzivnsJXETWXtiSZ1388Bbu3hJ7znWriLXwgqo6Eu4TBzrvlo9Uoq5H8i+Ybu7A
+32UpCAZeCilrY1177AQjJDQZZBv+nFj9PjwJiUg4flM8rDsXW/DhlOVxBNiRYJluLRDJgR8SECvwnFM8zGoUUiZ
+lFM4PEcgucU31cH/i3JPfb2FwcvRDNxGoY8q47VkmVcGISfHCvfiXDR59mQVGKRzgoXeh8k56+ajxUOnXDT5418
+M3kODk3GqjAkG5xAuWG+8fXecNBNsvEm5xHe30m4Rf4QeDlwGQZpj7IUUq75Ey6Wx08cykp7RTPWKodRg==
+
+2. Each user must click “Update activation key” in the Z Open Editor Welcome page and import the
+text file to complete the activation.
+
+
+
+
+(C) Copyright IBM Corp. 2025.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
