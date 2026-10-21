@@ -1,0 +1,46 @@
+{
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "zOpenDebug",
+            "request": "attach",
+            "name": "Demo 1 - attach：列出停放的除錯階段作業",
+            "connection": {
+                "type": "zowe",
+                "name": "zOpenDebug_1"
+            },
+            "allSessions": false,
+            "trace": true
+        },
+        {
+            "type": "zOpenDebug",
+            "request": "launch",
+            "name": "Demo 2 - launch：連到第一筆停放的階段作業（不送 JCL）",
+            "connection": {
+                "type": "zowe",
+                "name": "zOpenDebug_1"
+            },
+            "sessionId": "*",
+            "terminateAndAbend": true,
+            "trace": true
+        },
+        {
+            "type": "zOpenDebug",
+            "request": "launch",
+            "name": "Demo 3 - launch：自動送出 TSTJJ 並連線",
+            "connection": {
+                "type": "zowe",
+                "name": "zOpenDebug_1"
+            },
+            "applicationLaunch": {
+                "commandLine": "zowe rse submit data-set \"AZARLN.#TEST.PLI(TSTJJ)\""
+            },
+            "terminateAndAbend": true,
+            "trace": true
+        }
+    ]
+}
